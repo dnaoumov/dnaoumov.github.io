@@ -1,0 +1,801 @@
+[
+  {
+    "id": "1",
+    "name": "V8 Martini",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2", "3"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake ingredients with ice and strain into a chilled martini glass. Rev your engines and enjoy!",
+    "image": "v8-martini.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["dry", "clean"]
+    },
+    "carAuctionEasterEgg": "The perfect drink to enjoy while bidding on that classic V8 engine."
+  },
+  {
+    "id": "2",
+    "name": "High-Mileage Margarita",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 50,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 25,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "6",
+        "amount": 25,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 10,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a salt-rimmed glass. Garnish with a lime wheel.",
+    "image": "margarita.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["sour", "tangy", "sweet"]
+    },
+    "carAuctionEasterEgg": "Like a reliable classic car, this margarita never lets you down, even after high mileage."
+  },
+  {
+    "id": "3",
+    "name": "Mint Condition Mojito",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 20,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "10",
+        "amount": 8,
+        "unit": "leaves",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Muddle mint leaves with lime juice and simple syrup. Add rum and ice, shake, and pour into a glass. Top with soda water.",
+    "image": "mojito.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["fresh", "sweet", "minty"]
+    },
+    "carAuctionEasterEgg": "A pristine drink in 'mint condition' - would fetch a premium at any auction."
+  },
+  {
+    "id": "4",
+    "name": "Turbocharged Gin & Tonic",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 50,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "3"]
+      }
+    ],
+    "instructions": "Pour gin over ice in a highball glass. Fill with tonic water and garnish with lime.",
+    "image": "gin-tonic.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["bitter", "refreshing"]
+    },
+    "carAuctionEasterEgg": "The extra 'boost' in this G&T will have you making impulsive bids in no time."
+  },
+  {
+    "id": "5",
+    "name": "Screwdriver Deluxe",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 50,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2", "3"]
+      },
+      {
+        "ingredientId": "9",
+        "amount": 100,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Pour vodka over ice in a highball glass. Fill with orange juice and stir gently.",
+    "image": "screwdriver.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["sweet", "citrusy"]
+    },
+    "carAuctionEasterEgg": "The essential tool for any car enthusiast - in liquid form!"
+  },
+  {
+    "id": "6",
+    "name": "First Owner Fizz",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 40,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 15,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "8",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["9"]
+      }
+    ],
+    "instructions": "Shake vodka, lime juice and simple syrup with ice. Strain into a champagne flute and top with cranberry juice. Garnish with a lime twist.",
+    "image": "first-owner-fizz.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["fruity", "tart", "refreshing"]
+    },
+    "carAuctionEasterEgg": "Clean history, low miles, one previous owner - this drink has never been in an accident."
+  },
+  {
+    "id": "7",
+    "name": "Salvage Title Sangria",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "9",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "8",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["9"]
+      }
+    ],
+    "instructions": "Combine all ingredients in a glass with ice. Stir gently and garnish with fresh fruit slices.",
+    "image": "salvage-sangria.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["fruity", "sweet", "complex"]
+    },
+    "carAuctionEasterEgg": "Don't let the salvage title fool you - this drink has been completely rebuilt and is better than new!"
+  },
+  {
+    "id": "8",
+    "name": "Clean CARFAX Cooler",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "3"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 20,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "10",
+        "amount": 5,
+        "unit": "leaves",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Muddle mint leaves gently in a shaker. Add remaining ingredients with ice, shake well, and strain into a rocks glass with fresh ice. Garnish with a mint sprig.",
+    "image": "carfax-cooler.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["herbal", "refreshing", "zingy"]
+    },
+    "carAuctionEasterEgg": "No accidents, no previous damage, fully serviced - this drink's history is spotless!"
+  },
+  {
+    "id": "9",
+    "name": "Dealer Reserve Daiquiri",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a chilled coupe glass. Garnish with a lime wheel.",
+    "image": "reserve-daiquiri.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["sour", "clean", "refreshing"]
+    },
+    "carAuctionEasterEgg": "This premium reserve won't last long - bid now or watch someone else drive away with it!"
+  },
+  {
+    "id": "10",
+    "name": "Test Drive Tonic",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "9",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Shake gin, simple syrup, and orange juice with ice. Strain into a collins glass with ice and top with tonic water. Garnish with an orange slice.",
+    "image": "test-drive-tonic.jpg",
+    "tags": {
+      "strength": "light",
+      "taste": ["citrusy", "bubbly", "refreshing"]
+    },
+    "carAuctionEasterEgg": "Just a quick sip before you commit - but we guarantee you'll want to take it home!"
+  },
+  {
+    "id": "11",
+    "name": "Lemon Law Lemonade",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2", "3"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 20,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a rocks glass filled with crushed ice. Garnish with a lemon wheel.",
+    "image": "lemon-law.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["sour", "bright", "refreshing"]
+    },
+    "carAuctionEasterEgg": "If this drink doesn't perform as advertised, you're entitled to a full refund!"
+  },
+  {
+    "id": "12",
+    "name": "No Reserve Negroni",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Stir all ingredients with ice in a mixing glass. Strain into a rocks glass with a large ice cube. Garnish with an orange peel.",
+    "image": "no-reserve-negroni.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["bitter", "complex", "herbal"]
+    },
+    "carAuctionEasterEgg": "This auction has no reserve - it will sell to the highest bidder regardless of price!"
+  },
+  {
+    "id": "13",
+    "name": "Odometer Rollback Old Fashioned",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "7",
+        "amount": 10,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Stir ingredients with ice in a mixing glass. Strain into a rocks glass with a large ice cube. Garnish with an orange twist.",
+    "image": "odometer-old-fashioned.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["rich", "smooth", "complex"]
+    },
+    "carAuctionEasterEgg": "This drink might taste stronger than advertised - someone may have tampered with the proof!"
+  },
+  {
+    "id": "14",
+    "name": "Pre-Auction Punch",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "8",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["9"]
+      },
+      {
+        "ingredientId": "9",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a hurricane glass filled with crushed ice. Garnish with a slice of orange and cherry.",
+    "image": "pre-auction-punch.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["fruity", "sweet", "tropical"]
+    },
+    "carAuctionEasterEgg": "The perfect drink to calm your nerves before entering a bidding war!"
+  },
+  {
+    "id": "15",
+    "name": "Buyer's Premium Bellini",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2"]
+      },
+      {
+        "ingredientId": "9",
+        "amount": 90,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Pour vodka into a champagne flute. Top with chilled orange juice and stir gently. Garnish with an orange twist.",
+    "image": "premium-bellini.jpg",
+    "tags": {
+      "strength": "light",
+      "taste": ["fruity", "bubbly", "refreshing"]
+    },
+    "carAuctionEasterEgg": "Don't forget the 10% buyer's premium on top of the final bid price!"
+  },
+  {
+    "id": "16",
+    "name": "Frame Damage Fizz",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "3"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 25,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake ingredients with ice and strain into a collins glass filled with ice. Top with soda water and garnish with a lime wedge.",
+    "image": "frame-damage-fizz.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["zingy", "refreshing", "bubbly"]
+    },
+    "carAuctionEasterEgg": "Looks fine on the outside, but take a closer look at the structure before you bid!"
+  },
+  {
+    "id": "17",
+    "name": "Wholesale Whiskey Sour",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 50,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2", "3"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 25,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a rocks glass with fresh ice. Garnish with a cherry and orange slice.",
+    "image": "wholesale-whiskey-sour.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["sour", "smooth", "balanced"]
+    },
+    "carAuctionEasterEgg": "Dealer pricing - this drink costs less than retail!"
+  },
+  {
+    "id": "18",
+    "name": "Trade-In Tequila Sunrise",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "9",
+        "amount": 90,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Pour tequila over ice in a highball glass. Add orange juice and stir. Slowly pour grenadine down the inside of the glass to create a sunrise effect. Garnish with an orange slice and cherry.",
+    "image": "trade-in-sunrise.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["sweet", "fruity", "smooth"]
+    },
+    "carAuctionEasterEgg": "We'll take your old drink as a trade-in to lower the cost of this beautiful sunrise!"
+  },
+  {
+    "id": "19",
+    "name": "Rebuilt Title Rum Runner",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "8",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["9"]
+      },
+      {
+        "ingredientId": "9",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a hurricane glass filled with crushed ice. Garnish with an orange slice and cherry.",
+    "image": "rebuilt-rum-runner.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["fruity", "complex", "tropical"]
+    },
+    "carAuctionEasterEgg": "This drink had a rough past, but it's been expertly rebuilt and is now better than ever!"
+  },
+  {
+    "id": "20",
+    "name": "Final Bid Fizz",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2", "3"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 15,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake vodka, lime juice, and simple syrup with ice. Strain into a champagne flute and top with champagne. Garnish with a lemon twist.",
+    "image": "final-bid-fizz.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["elegant", "bubbly", "refreshing"]
+    },
+    "carAuctionEasterEgg": "Going once, going twice, sold! Celebrate your auction victory with this celebratory fizz!"
+  },
+  {
+    "id": "21",
+    "name": "Vehicle History Manhattan",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Stir ingredients with ice in a mixing glass until well-chilled. Strain into a chilled coupe glass. Garnish with a cherry.",
+    "image": "history-manhattan.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["rich", "smooth", "complex"]
+    },
+    "carAuctionEasterEgg": "This drink comes with a complete service history and documentation from all previous owners!"
+  },
+  {
+    "id": "22",
+    "name": "All-Wheel Drive Aperol",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "9",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Stir all ingredients with ice in a mixing glass. Strain into a rocks glass with a large ice cube. Garnish with an orange slice.",
+    "image": "all-wheel-aperol.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["bittersweet", "citrusy", "complex"]
+    },
+    "carAuctionEasterEgg": "Perfect grip and handling in all conditions, just like an all-wheel drive vehicle!"
+  },
+  {
+    "id": "23",
+    "name": "Certified Pre-Owned Cosmo",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2"]
+      },
+      {
+        "ingredientId": "5",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "6",
+        "amount": 15,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "8",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["9"]
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a chilled martini glass. Garnish with a lime wheel or twist.",
+    "image": "certified-cosmo.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["fruity", "tart", "smooth"]
+    },
+    "carAuctionEasterEgg": "Thoroughly inspected, reconditioned, and comes with an extended warranty!"
+  },
+  {
+    "id": "24",
+    "name": "Reserve Not Met Refresher",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "3"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      },
+      {
+        "ingredientId": "10",
+        "amount": 6,
+        "unit": "leaves",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Muddle mint and simple syrup in a shaker. Add gin and lime juice with ice, shake well, and strain into a collins glass with ice. Top with soda water and garnish with mint.",
+    "image": "reserve-not-met.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["herbal", "refreshing", "light"]
+    },
+    "carAuctionEasterEgg": "Sorry, the highest bid didn't meet the seller's reserve price - try again next auction!"
+  },
+  {
+    "id": "25",
+    "name": "Detailing Department Daiquiri",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1", "2"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 20,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a chilled coupe glass. Garnish with a lime wheel.",
+    "image": "detailing-daiquiri.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["clean", "bright", "crisp"]
+    },
+    "carAuctionEasterEgg": "This drink has been polished, waxed, and detailed to perfection!"
+  }
+]

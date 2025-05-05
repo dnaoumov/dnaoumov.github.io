@@ -1,0 +1,27 @@
+[
+  {
+    "id": "spirits",
+    "name": "Spirits",
+    "description": "Base alcohols like vodka, gin, rum, whiskey"
+  },
+  {
+    "id": "liqueurs",
+    "name": "Liqueurs",
+    "description": "Sweetened spirits with added flavors"
+  },
+  {
+    "id": "mixers",
+    "name": "Mixers",
+    "description": "Non-alcoholic ingredients like juices, sodas, syrups"
+  },
+  {
+    "id": "garnishes",
+    "name": "Garnishes",
+    "description": "Decorative and flavor-enhancing additions"
+  },
+  {
+    "id": "bitters",
+    "name": "Bitters",
+    "description": "Concentrated flavor extracts"
+  }
+]
