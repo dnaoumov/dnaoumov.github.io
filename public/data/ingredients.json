@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Vodka",
+    "category": "spirits",
+    "inStock": true,
+    "amount": 750,
+    "unit": "ml"
+  },
+  {
+    "id": "2",
+    "name": "Gin",
+    "category": "spirits",
+    "inStock": true,
+    "amount": 750,
+    "unit": "ml"
+  },
+  {
+    "id": "3",
+    "name": "White Rum",
+    "category": "spirits",
+    "inStock": false,
+    "amount": 0,
+    "unit": "ml"
+  },
+  {
+    "id": "4",
+    "name": "Tequila",
+    "category": "spirits",
+    "inStock": true,
+    "amount": 500,
+    "unit": "ml"
+  },
+  {
+    "id": "5",
+    "name": "Triple Sec",
+    "category": "liqueurs",
+    "inStock": true,
+    "amount": 350,
+    "unit": "ml"
+  },
+  {
+    "id": "6",
+    "name": "Lime Juice",
+    "category": "mixers",
+    "inStock": true,
+    "amount": 200,
+    "unit": "ml"
+  },
+  {
+    "id": "7",
+    "name": "Simple Syrup",
+    "category": "mixers",
+    "inStock": true,
+    "amount": 250,
+    "unit": "ml"
+  },
+  {
+    "id": "8",
+    "name": "Cranberry Juice",
+    "category": "mixers",
+    "inStock": false,
+    "amount": 0,
+    "unit": "ml"
+  },
+  {
+    "id": "9",
+    "name": "Orange Juice",
+    "category": "mixers",
+    "inStock": true,
+    "amount": 500,
+    "unit": "ml"
+  },
+  {
+    "id": "10",
+    "name": "Mint Leaves",
+    "category": "garnishes",
+    "inStock": false,
+    "amount": 0,
+    "unit": "g"
+  }
+]
