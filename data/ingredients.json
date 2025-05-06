@@ -78,5 +78,77 @@
     "inStock": false,
     "amount": 0,
     "unit": "g"
+  },
+  {
+    "id": "12",
+    "name": "Fresh Mint",
+    "category": "garnishes",
+    "inStock": false,
+    "amount": 0,
+    "unit": "g"
+  },
+  {
+    "id": "13",
+    "name": "Coconut Cream",
+    "category": "mixers",
+    "inStock": true,
+    "amount": 350,
+    "unit": "ml"
+  },
+  {
+    "id": "14",
+    "name": "Pineapple Juice",
+    "category": "mixers",
+    "inStock": true,
+    "amount": 500,
+    "unit": "ml"
+  },
+  {
+    "id": "15",
+    "name": "Espresso",
+    "category": "mixers",
+    "inStock": false,
+    "amount": 0,
+    "unit": "ml"
+  },
+  {
+    "id": "16",
+    "name": "Coffee Liqueur (Kahlúa)",
+    "category": "liqueurs",
+    "inStock": true,
+    "amount": 350,
+    "unit": "ml"
+  },
+  {
+    "id": "17",
+    "name": "Grapefruit Soda",
+    "category": "mixers",
+    "inStock": false,
+    "amount": 0,
+    "unit": "ml"
+  },
+  {
+    "id": "18",
+    "name": "Maraschino Liqueur",
+    "category": "liqueurs",
+    "inStock": false,
+    "amount": 0,
+    "unit": "ml"
+  },
+  {
+    "id": "19",
+    "name": "Crème de Violette",
+    "category": "liqueurs",
+    "inStock": false,
+    "amount": 0,
+    "unit": "ml"
+  },
+  {
+    "id": "20",
+    "name": "Soda Water",
+    "category": "mixers",
+    "inStock": true,
+    "amount": 750,
+    "unit": "ml"
   }
 ]

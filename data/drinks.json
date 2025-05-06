@@ -797,5 +797,183 @@
       "taste": ["clean", "bright", "crisp"]
     },
     "carAuctionEasterEgg": "This drink has been polished, waxed, and detailed to perfection!"
+  },
+  {
+    "id": "26",
+    "name": "Undercarriage Inspection Umbrella Drink",
+    "ingredients": [
+      {
+        "ingredientId": "3",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "13",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "14",
+        "amount": 60,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 15,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice and strain into a hurricane glass filled with crushed ice. Garnish with a pineapple wedge and cherry.",
+    "image": "undercarriage-umbrella.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["tropical", "sweet", "coconut", "fruity"]
+    },
+    "carAuctionEasterEgg": "Always check underneath before bidding - this drink has no hidden rust spots!"
+  },
+  {
+    "id": "27",
+    "name": "Mechanic's Special Mule",
+    "ingredients": [
+      {
+        "ingredientId": "1",
+        "amount": 50,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["2"]
+      },
+      {
+        "ingredientId": "6",
+        "amount": 15,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "17",
+        "amount": 90,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Build in a copper mug filled with ice. Add vodka and lime juice, then top with grapefruit soda. Stir gently and garnish with a lime wedge.",
+    "image": "mechanics-mule.jpg",
+    "tags": {
+      "strength": "medium",
+      "taste": ["citrus", "tart", "refreshing"]
+    },
+    "carAuctionEasterEgg": "Needs a little work, but this fixer-upper will be worth the investment!"
+  },
+  {
+    "id": "28",
+    "name": "Cold Start Coffee Cocktail",
+    "ingredients": [
+      {
+        "ingredientId": "4",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["3"]
+      },
+      {
+        "ingredientId": "16",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "15",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "7",
+        "amount": 10,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Shake all ingredients vigorously with ice. Double strain into a chilled coupe glass. Garnish with three coffee beans.",
+    "image": "cold-start-coffee.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["coffee", "rich", "bittersweet"]
+    },
+    "carAuctionEasterEgg": "Guaranteed to start right up, even on the coldest mornings!"
+  },
+  {
+    "id": "29",
+    "name": "Auction Block Aperitif",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 30,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "18",
+        "amount": 15,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "19",
+        "amount": 10,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "6",
+        "amount": 20,
+        "unit": "ml",
+        "category": "primary"
+      }
+    ],
+    "instructions": "Shake all ingredients with ice until well-chilled. Strain into a chilled coupe glass. Garnish with a lemon twist.",
+    "image": "auction-block-aperitif.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["floral", "herbal", "citrus"]
+    },
+    "carAuctionEasterEgg": "Going once, going twice... this beautiful specimen is ready for the auction block!"
+  },
+  {
+    "id": "30",
+    "name": "Virtual Bidding Vesper",
+    "ingredients": [
+      {
+        "ingredientId": "2",
+        "amount": 45,
+        "unit": "ml",
+        "category": "primary",
+        "substitutes": ["1"]
+      },
+      {
+        "ingredientId": "1",
+        "amount": 15,
+        "unit": "ml",
+        "category": "primary"
+      },
+      {
+        "ingredientId": "5",
+        "amount": 10,
+        "unit": "ml",
+        "category": "secondary"
+      }
+    ],
+    "instructions": "Stir all ingredients with ice until well-chilled. Strain into a chilled martini glass. Garnish with a lemon twist.",
+    "image": "virtual-vesper.jpg",
+    "tags": {
+      "strength": "strong",
+      "taste": ["dry", "complex", "herbal"]
+    },
+    "carAuctionEasterEgg": "No need to be present to win - this drink can be enjoyed from the comfort of your digital device!"
   }
 ]
