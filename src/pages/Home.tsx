@@ -17,6 +17,9 @@ import {
     ShoppingBasket as ShoppingIcon
 } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
+import MyBarImage from '../media/my_bar.jpg'
+import DrinkImage from '../media/drinks.jpg'
+import ShoppingListImage from '../media/shopping_list.jpg'
 
 const Home: React.FC = () => {
     return (
@@ -45,7 +48,7 @@ const Home: React.FC = () => {
                         <CardMedia
                             component="img"
                             height="140"
-                            image="https://via.placeholder.com/400x140?text=My+Bar"
+                            image={MyBarImage}
                             alt="My Bar"
                         />
                         <CardContent>
@@ -74,7 +77,7 @@ const Home: React.FC = () => {
                         <CardMedia
                             component="img"
                             height="140"
-                            image="https://via.placeholder.com/400x140?text=Available+Drinks"
+                            image={DrinkImage}
                             alt="Available Drinks"
                         />
                         <CardContent>
@@ -103,7 +106,7 @@ const Home: React.FC = () => {
                         <CardMedia
                             component="img"
                             height="140"
-                            image="https://via.placeholder.com/400x140?text=Shopping+List"
+                            image={ShoppingListImage}
                             alt="Shopping List"
                         />
                         <CardContent>

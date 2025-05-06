@@ -3,110 +3,218 @@ import {
     List,
     ListItem,
     ListItemText,
-    Checkbox,
     IconButton,
     Paper,
     Typography,
-    Button,
     Box,
-    Divider
+    Button,
+    Tooltip,
+    useTheme,
+    useMediaQuery
 } from '@mui/material';
-import { Delete as DeleteIcon, ShoppingCart as ShoppingCartIcon } from '@mui/icons-material';
-import { Ingredient } from '../../models/Ingredient';
+import {
+    Delete as DeleteIcon,
+    CheckCircle as CheckIcon,
+    ShoppingCart as ShoppingCartIcon,
+    Add as AddIcon
+} from '@mui/icons-material';
 import { useInventory } from '../../contexts/InventoryContext';
+import AddToShoppingListDialog from './AddToShoppingListDialog';
 
-interface ShoppingListProps {
-    missingIngredients: Ingredient[];
-}
+const ShoppingList: React.FC = () => {
+    const {
+        ingredients,
+        shoppingList,
+        removeFromShoppingList,
+        markAsPurchased,
+        addToShoppingList
+    } = useInventory();
 
-const ShoppingList: React.FC<ShoppingListProps> = ({ missingIngredients }) => {
-    const { toggleIngredientStock } = useInventory();
-    const [checked, setChecked] = useState<string[]>([]);
+    const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const handleToggle = (id: string) => () => {
-        const currentIndex = checked.indexOf(id);
-        const newChecked = [...checked];
+    // Filter to get only ingredients that are in the shopping list
+    const shoppingListItems = ingredients.filter(ingredient =>
+        shoppingList.includes(ingredient.id)
+    );
 
-        if (currentIndex === -1) {
-            newChecked.push(id);
-        } else {
-            newChecked.splice(currentIndex, 1);
-        }
+    // Filter to show all ingredients not in shopping list for the dialog
+    const availableIngredients = ingredients.filter(ingredient =>
+        !shoppingList.includes(ingredient.id)
+    );
 
-        setChecked(newChecked);
+    const handleRemove = (id: string) => {
+        removeFromShoppingList(id);
     };
 
-    const markAsPurchased = () => {
-        checked.forEach(id => {
-            toggleIngredientStock(id, true);
-        });
-        setChecked([]);
+    const handleMarkAsPurchased = (id: string) => {
+        markAsPurchased(id);
     };
 
-    if (missingIngredients.length === 0) {
+    const handleDialogOpen = () => {
+        setDialogOpen(true);
+    };
+
+    const handleDialogClose = () => {
+        setDialogOpen(false);
+    };
+
+    const handleAddItems = (selectedIds: string[]) => {
+        selectedIds.forEach(id => addToShoppingList(id));
+    };
+
+    if (shoppingListItems.length === 0) {
         return (
-            <Paper sx={{ p: 3, textAlign: 'center' }}>
-                <Typography variant="h6" color="text.secondary">
-                    You have all ingredients in stock!
-                </Typography>
-            </Paper>
+            <>
+                <Paper elevation={2} sx={{
+                    p: { xs: 2, sm: 3 },
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                }}>
+                    <ShoppingCartIcon sx={{
+                        fontSize: { xs: 50, sm: 60 },
+                        color: 'text.secondary',
+                        opacity: 0.3,
+                        mb: 2
+                    }} />
+                    <Typography variant="h6" color="text.secondary" gutterBottom>
+                        Your shopping list is empty
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                        Add ingredients from My Bar to create your shopping list
+                    </Typography>
+                    <Box sx={{ display: 'flex', justifyContent: 'center', width: { xs: '100%', sm: 'auto' } }}>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={handleDialogOpen}
+                            startIcon={<AddIcon />}
+                            fullWidth={isMobile}
+                            sx={{ px: { xs: 3, sm: 2 } }}
+                        >
+                            Add Item
+                        </Button>
+                    </Box>
+                </Paper>
+
+                <AddToShoppingListDialog
+                    open={dialogOpen}
+                    onClose={handleDialogClose}
+                    onAdd={handleAddItems}
+                    availableIngredients={availableIngredients}
+                />
+            </>
         );
     }
 
     return (
-        <Paper>
-            <Box sx={{ p: 2, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                <Typography variant="h6">
-                    Shopping List ({missingIngredients.length} items)
-                </Typography>
-
-                {checked.length > 0 && (
+        <>
+            <Paper elevation={1}>
+                <Box sx={{
+                    p: 2,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    borderBottom: '1px solid rgba(0,0,0,0.12)',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    gap: { xs: 2, sm: 0 }
+                }}>
+                    <Typography variant="h6" sx={{ width: { xs: '100%', sm: 'auto' } }}>
+                        Shopping List
+                    </Typography>
                     <Button
                         variant="contained"
-                        color="primary"
-                        startIcon={<ShoppingCartIcon />}
-                        onClick={markAsPurchased}
+                        size={isMobile ? "medium" : "small"}
+                        startIcon={<AddIcon />}
+                        onClick={handleDialogOpen}
+                        fullWidth={isMobile}
                     >
-                        Mark {checked.length} as Purchased
+                        Add Item
                     </Button>
-                )}
-            </Box>
-
-            <Divider />
-
-            <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                {missingIngredients.map((ingredient) => {
-                    const labelId = `checkbox-list-label-${ingredient.id}`;
-
-                    return (
+                </Box>
+                <List disablePadding>
+                    {shoppingListItems.map((ingredient) => (
                         <ListItem
                             key={ingredient.id}
+                            divider
+                            sx={{ py: { xs: 1.5, sm: 1 } }} // Increased touch target height
                             secondaryAction={
-                                <IconButton edge="end" aria-label="comments">
-                                    <DeleteIcon />
-                                </IconButton>
+                                <Box sx={{
+                                    display: 'flex',
+                                    '& .MuiIconButton-root': {
+                                        p: { xs: 1.5, sm: 1 } // Larger touch targets for buttons
+                                    }
+                                }}>
+                                    <Tooltip title="Mark as purchased">
+                                        <IconButton
+                                            edge="end"
+                                            aria-label="mark purchased"
+                                            onClick={() => handleMarkAsPurchased(ingredient.id)}
+                                            color="success"
+                                            sx={{ mr: 1 }}
+                                        >
+                                            <CheckIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                    <Tooltip title="Remove">
+                                        <IconButton
+                                            edge="end"
+                                            aria-label="delete"
+                                            onClick={() => handleRemove(ingredient.id)}
+                                            color="error"
+                                        >
+                                            <DeleteIcon />
+                                        </IconButton>
+                                    </Tooltip>
+                                </Box>
                             }
-                            disablePadding
                         >
-                            <ListItem dense>
-                                <Checkbox
-                                    edge="start"
-                                    checked={checked.indexOf(ingredient.id) !== -1}
-                                    tabIndex={-1}
-                                    disableRipple
-                                    inputProps={{ 'aria-labelledby': labelId }}
-                                    onChange={handleToggle(ingredient.id)}
-                                />
-                                <ListItemText
-                                    id={labelId}
-                                    primary={ingredient.name}
-                                />
-                            </ListItem>
+                            <ListItemText
+                                primary={ingredient.name}
+                                sx={{ pr: { xs: 15, sm: 10 } }} // Ensure text doesn't overlap buttons
+                            />
                         </ListItem>
-                    );
-                })}
-            </List>
-        </Paper>
+                    ))}
+                </List>
+
+                <Box sx={{
+                    p: 2,
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    flexDirection: { xs: 'column', sm: 'row' },
+                    gap: { xs: 2, sm: 0 }
+                }}>
+                    <Typography variant="body2" color="text.secondary">
+                        {shoppingListItems.length} item{shoppingListItems.length !== 1 ? 's' : ''} in your shopping list
+                    </Typography>
+
+                    <Button
+                        variant="outlined"
+                        color="primary"
+                        size="small"
+                        startIcon={<CheckIcon />}
+                        onClick={() => {
+                            shoppingListItems.forEach(item => markAsPurchased(item.id));
+                        }}
+                        fullWidth={isMobile}
+                        sx={{ py: { xs: 1, sm: 'auto' } }}
+                    >
+                        Mark all as purchased
+                    </Button>
+                </Box>
+            </Paper>
+
+            <AddToShoppingListDialog
+                open={dialogOpen}
+                onClose={handleDialogClose}
+                onAdd={handleAddItems}
+                availableIngredients={availableIngredients}
+            />
+        </>
     );
 };
 

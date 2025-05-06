@@ -1,96 +1,174 @@
-import React, { useState } from 'react';
+// src/components/inventory/IngredientList.tsx
+import React from 'react';
 import {
     List,
-    ListSubheader,
+    ListItem,
+    ListItemText,
+    ListItemSecondaryAction,
+    Switch,
     Paper,
-    Divider,
-    TextField,
-    InputAdornment,
     Box,
-    Typography
+    Typography,
+    IconButton,
+    Tooltip,
+    Button
 } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
+import {
+    AddShoppingCart as AddToCartIcon,
+    RemoveShoppingCart as RemoveFromCartIcon,
+    ShoppingCart as ShoppingCartIcon
+} from '@mui/icons-material';
 import { Ingredient, Category } from '../../models/Ingredient';
-import IngredientItem from './IngredientItem';
+import { useInventory } from '../../contexts/InventoryContext';
 
 interface IngredientListProps {
     ingredients: Ingredient[];
     categories: Category[];
+    showAddToShoppingListButton?: boolean;
+    showAddAllToShoppingList?: boolean;
 }
 
-const IngredientList: React.FC<IngredientListProps> = ({ ingredients, categories }) => {
-    const [searchTerm, setSearchTerm] = useState('');
+const IngredientList: React.FC<IngredientListProps> = ({
+                                                           ingredients,
+                                                           categories,
+                                                           showAddToShoppingListButton = false,
+                                                           showAddAllToShoppingList = false
+                                                       }) => {
+    const {
+        toggleIngredientStock,
+        addToShoppingList,
+        addMultipleToShoppingList,
+        removeFromShoppingList,
+        isInShoppingList
+    } = useInventory();
 
-    const filteredIngredients = ingredients.filter(ingredient =>
-        ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // Group ingredients by category
+    const groupedIngredients = ingredients.reduce((acc, ingredient) => {
+        const category = ingredient.category || 'Other';
+        if (!acc[category]) {
+            acc[category] = [];
+        }
+        acc[category].push(ingredient);
+        return acc;
+    }, {} as Record<string, Ingredient[]>);
 
-    // Handle case where categories might be empty
-    if (!categories || categories.length === 0) {
-        return (
-            <Paper sx={{ width: '100%', mb: 2, p: 2 }}>
-                <Typography variant="body1">No categories available.</Typography>
-            </Paper>
-        );
-    }
+    const handleShoppingListAction = (ingredientId: string) => {
+        if (isInShoppingList(ingredientId)) {
+            removeFromShoppingList(ingredientId);
+        } else {
+            addToShoppingList(ingredientId);
+        }
+    };
 
-    // Group ingredients by category - fix potential undefined errors
-    const groupedIngredients = categories
-        .filter(category => category && category.id) // Ensure category is valid
-        .map(category => {
-            return {
-                category,
-                ingredients: filteredIngredients.filter(
-                    ingredient => ingredient && ingredient.category === category.id
-                )
-            };
-        }).filter(group => group.ingredients.length > 0);
+    const handleAddAllToShoppingList = (categoryIngredients: Ingredient[]) => {
+        // Get all ingredient IDs that aren't already in the shopping list
+        const idsToAdd = categoryIngredients
+            .filter(ingredient => !isInShoppingList(ingredient.id))
+            .map(ingredient => ingredient.id);
+
+        // Use the bulk add function instead of individual adds
+        addMultipleToShoppingList(idsToAdd);
+    };
+
+    const handleAddAllOutOfStockToShoppingList = () => {
+        // Get all out-of-stock ingredient IDs that aren't already in the shopping list
+        const idsToAdd = ingredients
+            .filter(ingredient => !isInShoppingList(ingredient.id))
+            .map(ingredient => ingredient.id);
+
+        // Use the bulk add function
+        addMultipleToShoppingList(idsToAdd);
+    };
+
+    // Function to capitalize first letter of a string
+    const capitalize = (str: string) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
 
     return (
-        <Paper sx={{ width: '100%', mb: 2 }}>
-            <Box sx={{ p: 2 }}>
-                <TextField
-                    fullWidth
-                    placeholder="Search ingredients..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    InputProps={{
-                        startAdornment: (
-                            <InputAdornment position="start">
-                                <SearchIcon />
-                            </InputAdornment>
-                        ),
-                    }}
-                    variant="outlined"
-                    size="small"
-                />
-            </Box>
+        <>
+            {Object.entries(groupedIngredients).map(([category, categoryIngredients]) => (
+                <Paper key={category} sx={{ mb: 3, overflow: 'hidden' }}>
+                    <Box sx={{
+                        bgcolor: 'primary.main',
+                        py: 1,
+                        px: 2,
+                        color: 'white',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.12)'
+                    }}>
+                        <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                            {capitalize(category)}
+                        </Typography>
+                    </Box>
+                    <List dense>
+                        {categoryIngredients.map((ingredient) => (
+                            <ListItem key={ingredient.id} divider>
+                                <ListItemText primary={ingredient.name} />
+                                <ListItemSecondaryAction>
+                                    {showAddToShoppingListButton && (
+                                        <Tooltip title={isInShoppingList(ingredient.id)
+                                            ? "Remove from shopping list"
+                                            : "Add to shopping list"}>
+                                            <IconButton
+                                                edge="end"
+                                                aria-label="shopping list action"
+                                                onClick={() => handleShoppingListAction(ingredient.id)}
+                                                sx={{ mr: 1 }}
+                                            >
+                                                {isInShoppingList(ingredient.id) ?
+                                                    <RemoveFromCartIcon color="info" /> :
+                                                    <AddToCartIcon />}
+                                            </IconButton>
+                                        </Tooltip>
+                                    )}
+                                    <Switch
+                                        edge="end"
+                                        onChange={() => toggleIngredientStock(ingredient.id, !ingredient.inStock)}
+                                        checked={ingredient.inStock}
+                                        color="primary"
+                                    />
+                                </ListItemSecondaryAction>
+                            </ListItem>
+                        ))}
+                    </List>
 
-            <Divider />
+                    {showAddAllToShoppingList && categoryIngredients.length > 0 && (
+                        <Box sx={{ p: 1.5, display: 'flex', justifyContent: 'flex-end' }}>
+                            <Button
+                                size="small"
+                                variant="outlined"
+                                color="primary"
+                                startIcon={<ShoppingCartIcon />}
+                                onClick={() => handleAddAllToShoppingList(categoryIngredients)}
+                            >
+                                Add all to shopping list
+                            </Button>
+                        </Box>
+                    )}
+                </Paper>
+            ))}
 
-            <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                {groupedIngredients.length > 0 ? (
-                    groupedIngredients.map(group => (
-                        <React.Fragment key={group.category.id}>
-                            <ListSubheader sx={{ bgcolor: 'background.default' }}>
-                                {group.category.name}
-                            </ListSubheader>
-                            {group.ingredients.map(ingredient => (
-                                <IngredientItem
-                                    key={ingredient.id}
-                                    ingredient={ingredient}
-                                />
-                            ))}
-                            <Divider component="li" />
-                        </React.Fragment>
-                    ))
-                ) : (
-                    <ListSubheader>
-                        {searchTerm ? "No ingredients match your search" : "No ingredients available"}
-                    </ListSubheader>
-                )}
-            </List>
-        </Paper>
+            {showAddAllToShoppingList && ingredients.length > 0 && (
+                <Box sx={{ mt: 2, mb: 4, display: 'flex', justifyContent: 'center' }}>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        startIcon={<ShoppingCartIcon />}
+                        onClick={handleAddAllOutOfStockToShoppingList}
+                    >
+                        Add all out-of-stock items to shopping list
+                    </Button>
+                </Box>
+            )}
+
+            {Object.keys(groupedIngredients).length === 0 && (
+                <Paper sx={{ p: 3, textAlign: 'center' }}>
+                    <Typography color="textSecondary">
+                        No ingredients found
+                    </Typography>
+                </Paper>
+            )}
+        </>
     );
 };
 

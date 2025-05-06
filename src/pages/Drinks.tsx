@@ -36,6 +36,9 @@ import {
 import { useDrinks } from '../contexts/DrinkContext';
 import { useInventory } from '../contexts/InventoryContext';
 import DrinkList from '../components/drinks/DrinkList';
+import PageHeader from '../components/layout/PageHeader';
+import drinksImage from '../media/drinks.jpg';
+
 
 // Custom styled Slider for the strength gauge
 const StrengthSlider = styled(Slider)(({ theme }) => ({
@@ -276,21 +279,11 @@ const Drinks: React.FC = () => {
 
     return (
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <Paper
-                sx={{
-                    p: 2,
-                    mb: 3,
-                    background: 'linear-gradient(45deg, #0F2A52 30%, #2D4773 90%)',
-                    color: 'white'
-                }}
-            >
-                <Typography variant="h4" component="h1" gutterBottom sx={{ color: '#FF7043' }}>
-                    Drinks
-                </Typography>
-                <Typography variant="subtitle1" sx={{ color: 'white' }}>
-                    Explore our collection of drinks with car auction-themed humor
-                </Typography>
-            </Paper>
+            <PageHeader
+                title="Drinks"
+                subtitle="Discover and create delicious cocktails."
+                imageSrc={drinksImage}
+            />
 
             {error && (
                 <Alert severity="error" sx={{ mb: 3 }}>

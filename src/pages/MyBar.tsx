@@ -1,32 +1,26 @@
-import React from 'react';
-import {
-    Container,
-    Typography,
-    Paper,
-    Box,
-    Tabs,
-    Tab,
-    CircularProgress,
-    Alert
-} from '@mui/material';
-import { useInventory } from '../contexts/InventoryContext';
+// src/pages/MyBar.tsx
+import React, { useState } from 'react';
+import { Container, Box, Tabs, Tab, Alert } from '@mui/material';
 import IngredientList from '../components/inventory/IngredientList';
+import { useInventory } from '../contexts/InventoryContext';
+import PageHeader from '../components/layout/PageHeader';
+import barImage from '../media/my_bar.jpg';
 
 const MyBar: React.FC = () => {
-    const [tabValue, setTabValue] = React.useState(0);
+    const [tabValue, setTabValue] = useState(0);
     const { ingredients, categories, isLoading, error } = useInventory();
+
+    const inStockIngredients = ingredients.filter(i => i.inStock);
+    const outOfStockIngredients = ingredients.filter(i => !i.inStock);
 
     const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
         setTabValue(newValue);
     };
 
-    const inStockIngredients = ingredients.filter(ingredient => ingredient.inStock);
-    const outOfStockIngredients = ingredients.filter(ingredient => !ingredient.inStock);
-
     if (isLoading) {
         return (
-            <Container maxWidth="md" sx={{ mt: 4, mb: 4, textAlign: 'center' }}>
-                <CircularProgress />
+            <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
+                <div>Loading...</div>
             </Container>
         );
     }
@@ -40,58 +34,56 @@ const MyBar: React.FC = () => {
     }
 
     return (
-        <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
-            <Paper
-                sx={{
-                    p: 2,
-                    mb: 3,
-                    background: 'linear-gradient(45deg, #0F2A52 30%, #2D4773 90%)',
-                    color: 'white'
-                }}
-            >
-                <Typography variant="h4" component="h1" gutterBottom sx={{ color: '#FF7043' }}>
-                    My Bar
-                </Typography>
-                <Typography variant="subtitle1" sx={{ color: 'white' }}>
-                    Manage your inventory of ingredients to see what drinks you can make
-                </Typography>
-            </Paper>
-
-            <Box sx={{ mb: 3 }}>
-                <Tabs
-                    value={tabValue}
-                    onChange={handleTabChange}
-                    indicatorColor="primary"
-                    textColor="primary"
-                    centered
-                >
-                    <Tab label="All Ingredients" />
-                    <Tab label={`In Stock (${inStockIngredients.length})`} />
-                    <Tab label={`Shopping List (${outOfStockIngredients.length})`} />
-                </Tabs>
-            </Box>
-
-            {tabValue === 0 && (
-                <IngredientList
-                    ingredients={ingredients}
-                    categories={categories}
+        <>
+            <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
+                <PageHeader
+                    title="My Bar"
+                    subtitle="Manage your inventory and keep track of what you have on hand."
+                    imageSrc={barImage}
                 />
-            )}
+            </Container>
 
-            {tabValue === 1 && (
-                <IngredientList
-                    ingredients={inStockIngredients}
-                    categories={categories}
-                />
-            )}
+            <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
+                <Box sx={{ mb: 3 }}>
+                    <Tabs
+                        value={tabValue}
+                        onChange={handleTabChange}
+                        indicatorColor="primary"
+                        textColor="primary"
+                        centered
+                    >
+                        <Tab label="All Ingredients" />
+                        <Tab label={`In Stock (${inStockIngredients.length})`} />
+                        <Tab label={`Out of Stock (${outOfStockIngredients.length})`} />
+                    </Tabs>
+                </Box>
 
-            {tabValue === 2 && (
-                <IngredientList
-                    ingredients={outOfStockIngredients}
-                    categories={categories}
-                />
-            )}
-        </Container>
+                {tabValue === 0 && (
+                    <IngredientList
+                        ingredients={ingredients}
+                        categories={categories}
+                        showAddToShoppingListButton={true}
+                    />
+                )}
+
+                {tabValue === 1 && (
+                    <IngredientList
+                        ingredients={inStockIngredients}
+                        categories={categories}
+                        showAddToShoppingListButton={true}
+                    />
+                )}
+
+                {tabValue === 2 && (
+                    <IngredientList
+                        ingredients={outOfStockIngredients}
+                        categories={categories}
+                        showAddToShoppingListButton={true}
+                        showAddAllToShoppingList={true}
+                    />
+                )}
+            </Container>
+        </>
     );
 };
 

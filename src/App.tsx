@@ -12,7 +12,7 @@ import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import MyBar from './pages/MyBar';
 import Drinks from './pages/Drinks';
-import ShoppingList from './pages/ShoppingList';
+import ShoppingListPage from './pages/ShoppingList';
 
 function App() {
     return (
@@ -32,7 +32,7 @@ function App() {
                                     <Route path="/" element={<Home />} />
                                     <Route path="/my-bar" element={<MyBar />} />
                                     <Route path="/drinks" element={<Drinks />} />
-                                    <Route path="/shopping-list" element={<ShoppingList />} />
+                                    <Route path="/shopping-list" element={<ShoppingListPage />} />
                                     <Route path="*" element={<Home />} />
                                 </Routes>
                             </Box>
