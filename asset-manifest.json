@@ -1,15 +1,44 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.8fce2810.js",
+    "main.js": "/static/js/main.9b157a0e.js",
     "static/js/453.0966ff94.chunk.js": "/static/js/453.0966ff94.chunk.js",
+    "static/media/my_bar.jpg": "/static/media/my_bar.51cd43a6b1906cc9e95d.jpg",
+    "static/media/trade-in-sunrise.jpg": "/static/media/trade-in-sunrise.4d382c799b6792516092.jpg",
+    "static/media/reserve-daiquiri.jpg": "/static/media/reserve-daiquiri.18407966d7c37fc29c96.jpg",
+    "static/media/salvage-sangria.jpg": "/static/media/salvage-sangria.388f2bf9bcddb14aaf7d.jpg",
+    "static/media/drink-placeholder.jpg": "/static/media/drink-placeholder.78c2d8ac379f2b8614b2.jpg",
+    "static/media/drinks.jpg": "/static/media/drinks.f6776d05c439b8e25fde.jpg",
+    "static/media/reserve-not-met.jpg": "/static/media/reserve-not-met.5b17a07eac11892e8f89.jpg",
+    "static/media/wholesale-whiskey-sour.jpg": "/static/media/wholesale-whiskey-sour.7b4a2e395d6622ba88df.jpg",
+    "static/media/test-drive-tonic.jpg": "/static/media/test-drive-tonic.757a0c263700f691d3ff.jpg",
+    "static/media/odometer-old-fashioned.jpg": "/static/media/odometer-old-fashioned.a78a8e2228f233e00c6a.jpg",
+    "static/media/no-reserve-negroni.jpg": "/static/media/no-reserve-negroni.af08dbd6a91ea4944cd0.jpg",
+    "static/media/premium-bellini.jpg": "/static/media/premium-bellini.3c380dfa87c450616f3b.jpg",
+    "static/media/shopping_list.jpg": "/static/media/shopping_list.88949b16b7e55c536f32.jpg",
+    "static/media/rebuilt-rum-runner.jpg": "/static/media/rebuilt-rum-runner.de215570d1ff19fbd606.jpg",
+    "static/media/carfax-cooler.jpg": "/static/media/carfax-cooler.4e897209ced322427dbd.jpg",
+    "static/media/margarita.jpg": "/static/media/margarita.515b0894007262de2c0b.jpg",
+    "static/media/v8-martini.jpg": "/static/media/v8-martini.bdd4c96d24aa1b9f775c.jpg",
+    "static/media/mojito.jpg": "/static/media/mojito.4d7e2b541f6ef9b4b94c.jpg",
+    "static/media/certified-cosmo.jpg": "/static/media/certified-cosmo.db52a8a41eafe8cc2298.jpg",
+    "static/media/first-owner-fizz.jpg": "/static/media/first-owner-fizz.da7443d1721d45a45c26.jpg",
+    "static/media/screwdriver.png": "/static/media/screwdriver.3ae4b93356206debde88.png",
+    "static/media/history-manhattan.jpg": "/static/media/history-manhattan.0eea8f760d82596244b9.jpg",
+    "static/media/lemon-law.jpg": "/static/media/lemon-law.8ce05d0a5195828a8b70.jpg",
+    "static/media/final-bid-fizz.jpg": "/static/media/final-bid-fizz.5e222848c176a075ddff.jpg",
+    "static/media/detailing-daiquiri.jpg": "/static/media/detailing-daiquiri.e191c22ead3006b365b5.jpg",
+    "static/media/gin-tonic.jpg": "/static/media/gin-tonic.8bec477302305a9dd92a.jpg",
+    "static/media/all-wheel-aperol.jpg": "/static/media/all-wheel-aperol.df4b38bbcd67f5fc199d.jpg",
+    "static/media/frame-damage-fizz.jpg": "/static/media/frame-damage-fizz.6a538f984128c0ac477c.jpg",
+    "static/media/pre-auction-punch.jpg": "/static/media/pre-auction-punch.3df60e9bd6e5e52bd002.jpg",
     "index.html": "/index.html",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.8fce2810.js.map": "/static/js/main.8fce2810.js.map",
+    "main.9b157a0e.js.map": "/static/js/main.9b157a0e.js.map",
     "453.0966ff94.chunk.js.map": "/static/js/453.0966ff94.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.8fce2810.js"
+    "static/js/main.9b157a0e.js"
   ]
 }
